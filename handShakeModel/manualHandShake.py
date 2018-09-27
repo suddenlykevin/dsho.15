@@ -7,41 +7,41 @@ enteredPIN = ""
 linkCode = 0
 incoming= None
 radio.on()
-boat1 = Image("00900:"
+boat1 = Image("00000:"
               "00000:"
               "00000:"
               "00000:"
-              "00000")
-boat2 = Image("09990:"
-              "00900:"
-              "00000:"
-              "00000:"
-              "00000")
-boat3 = Image("08880:"
-              "00800:"
-              "00000:"
-              "00000:"
-              "00000")
-boat4 = Image("27672:"
-              "08780:"
-              "00000:"
-              "00000:"
-              "00000")
-boat5 = Image("66466:"
-              "77677:"
-              "88788:"
-              "09890:"
               "00900")
+boat2 = Image("00000:"
+              "00000:"
+              "00000:"
+              "00900:"
+              "09990")
+boat3 = Image("00000:"
+              "00000:"
+              "00000:"
+              "00800:"
+              "08880")
+boat4 = Image("00000:"
+              "00000:"
+              "00000:"
+              "08780:"
+              "27672")
+boat5 = Image("00900:"
+              "09890:"
+              "88788:"
+              "77677:"
+              "66466")
 boat6 = Image("56665:"
               "46664:"
               "46653:"
               "46664:"
               "56665")
-boat6 = Image("54345:"
+boat6 = Image("54445:"
+              "66666:"
+              "66666:"
               "66566:"
-              "66666:"
-              "66666:"
-              "54445")
+              "54345")
 boat9 = Image("99999:"
               "99099:"
               "90909:"
@@ -151,7 +151,7 @@ def syncShow():
 	if PIN>enteredPIN:
 		for x in range(5):
 			display.clear()
-			display.set_pixel(2,4-x,5)
+			display.set_pixel(2,x,5)
 			sleep(75)
 			display.clear()
 		radio.send("sync")
@@ -160,12 +160,12 @@ def syncShow():
 			incoming = radio.receive()
 		for x in range(5):
 			display.clear()
-			display.set_pixel(2,x,5)
+			display.set_pixel(2,4-x,5)
 			sleep(75)
 			display.clear()
 		for x in range(5):
 			display.clear()
-			display.set_pixel(2,4-x,5)
+			display.set_pixel(2,x,5)
 			sleep(75)
 			display.clear()
 		radio.send("collision")
@@ -175,12 +175,12 @@ def syncShow():
 			incoming = radio.receive()
 		for x in range(5):
 			display.clear()
-			display.set_pixel(2,x,5)
+			display.set_pixel(2,4-x,5)
 			sleep(75)
 			display.clear()
 		for x in range(5):
 			display.clear()
-			display.set_pixel(2,4-x,5)
+			display.set_pixel(2,x,5)
 			sleep(75)
 			display.clear()
 		radio.send("syncverify")
